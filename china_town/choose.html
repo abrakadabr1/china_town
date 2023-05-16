@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Choose</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-image: url('images/back2.jpg');
+			background-size: no-repeat;
+
+            background-position: center;
+
+            background-size: cover;
+            transition: .5s;
+            
+
+		}
+		.background1{
+			width: 100vw;
+			height: 100vh;
+			background: rgba(0, 0, 0, .5);
+			position: absolute;
+			z-index: -2;
+		
+			
+			
+			
+			
+		}
+		.text{
+			font-size: 50px;
+			color: white;
+			z-index: -1;
+			position: absolute;
+			width: 100vw;
+			height: 100vh;
+			left: -100vw;
+			
+			
+			
+			
+		}
+		.active{
+			animation-name: move;
+			animation-duration: 1s;
+			animation-iteration-count: 1;
+		}
+		.not-active{
+			animation-name: move;
+			animation-direction: alternate;
+			animation-duration: 1s;
+			animation-iteration-count: 1;
+			
+
+		}
+
+		
+		@keyframes move{
+			from {
+      			transform: translateX(0vw);
+   			}
+   			to {
+      			transform: translateX(100vw);
+   			}
+		}
+
+		
+
+	</style>
+</head>
+<body>
+	<div class="background1"></div>
+	<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	<div class="block"><p>Text</p></div>
+	<div class="block"><p>Text</p></div>
+	<div class="block"><p>Text</p></div>
+	<script type="text/javascript">
+		block1 = document.querySelector('.block');
+		background1 = document.querySelector('.background1');
+		text = document.querySelector('.text');
+
+
+
+		block1.onmouseover = () => {
+			text.classList.toggle("active");
+		};
+		block1.onmouseout = () => {
+			text.classList.toggle("not-active");
+		};
+		
+	</script>
+</body>
+</html>
